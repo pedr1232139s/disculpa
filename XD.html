@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me disculpas, Alesita? 🥺</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 90%;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: white;
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #ff4d4d;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 15px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .no {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+                width: 95%;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            button {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Me disculpas, Alesita? 😿</h1>
+        <div class="buttons" id="opciones">
+            <button class="yes" onclick="aceptado()">Sí 💖</button>
+            <button class="no" onclick="rechazado()">No 😭</button>
+        </div>
+        
+        <div id="mensajeNo" class="hidden">
+            <h2>Pero Alesita hermosa, por favor 🥺</h2>
+            <p>No era mi intencion decir que me aburres, yo nunca me aburro contigo :(</p>
+            <p>Solo queria invitarte a jugar un jueguito de celular 😿</p>
+            <p>¿Jugamos? 🌸</p>
+            <button class="yes" onclick="aceptado()">Está bien 💖</button>
+        </div>
+        
+        <div id="mensajeSi" class="hidden">
+            <h2>¡YAY! 🥳💖</h2>
+            <p>Eres muy buena, Alesita es muy linda^^. ❣️ </p>
+            <p>Te lo juro que no fue mi intencion, me disculpo contigo🌷</p>
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYno4NnkyYXlmYWx3MHo4aTR3OTh3aXRpMG0yZjB0OXVtM2VkNTFuYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPGGecxiqAvxUqd20/giphy.gif" width="200px">
+        </div>
+    </div>
+
+    <script>
+        function rechazado() {
+            document.getElementById("mensajeNo").style.display = "block";
+        }
+
+        function aceptado() {
+            document.getElementById("mensajeNo").style.display = "none";
+            document.getElementById("mensajeSi").style.display = "block";
+            document.getElementById("opciones").style.display = "none"; // Elimina botones Sí y No
+        }
+    </script>
+</body>
+</html>
